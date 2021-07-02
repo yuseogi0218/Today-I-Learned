@@ -58,8 +58,8 @@
 ![](img1.png)
 
 - ### 컨트롤러
-  - 컨트롤러 생성 후 annotation 작성 필수 → controller
-  - Getmapping(“메서드 이름”)
+  - 컨트롤러 생성 후 annotation 작성 필수 → @controller
+  - @Getmapping(“메서드 이름”)
     - Localhost:8080/메서드 이름
   - 컨트롤러에서 리턴 값으로 문자를 반환하면 ViewResolver가 화면을 찾아서 처리
     - 스프링 부트 템플릿 엔진 기본 viewName 매핑
