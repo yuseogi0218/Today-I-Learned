@@ -30,6 +30,7 @@
   - 구동 방식
     - 브라우저 → 톰켓 서버 request with parameter
     - Controller 가 해당 request 처리 후 viewResolver에게 반환
+      - viewResorver 는 Controller 과 View를 연결  
     - viewResolver가 html 파일 변환 후 웹 브라우저에게 반환
 
 ![](img2-2.png)
