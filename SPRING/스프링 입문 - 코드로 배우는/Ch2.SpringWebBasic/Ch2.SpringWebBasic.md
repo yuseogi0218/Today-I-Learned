@@ -21,6 +21,8 @@
 - ### MVC와 템플릿 엔진
   - MVC – Model ,View, Controller
     - 역할을 나눔
+![](mvc-1.png)
+
     - View
       - 화면을 그리는데 집중 – html 파일
     - Model, Controller
