@@ -5,7 +5,7 @@
         - 자바 코드로 직접 스프링 빈 등록하기
     - ### 컴포넌트 스캔과 자동 의존관계 설정 
     - @Component annotation이 있으면 스프링 빈으로 자동 등록된다.
-    - → @Componen 를 포함하는 다음 annotation도 스프링 빈으로 자동 등록된가.
+    - → @Component 를 포함하는 다음 annotation도 스프링 빈으로 자동 등록된가.
         - @Controller / @Service / @Repository
         - 각각 유일하게 하나만 등록한다. → 서로 공유함.
     - member 컨트롤러 
