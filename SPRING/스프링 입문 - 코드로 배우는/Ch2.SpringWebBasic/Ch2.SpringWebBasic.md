@@ -25,6 +25,10 @@
       - 화면을 그리는데 집중 – html 파일
     - Model, Controller
       - 비즈니스 로직에 집중
+      - Model
+        - 데이터와 비즈니스 로직 관리
+      - Controller
+        - 명령을 Model과 View 부분으로 라우팅
   - 파라미터 전달 방법
     - ?name=전달 → ?파라미터 이름=전달할 값 
   - 구동 방식
