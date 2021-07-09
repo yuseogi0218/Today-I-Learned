@@ -33,6 +33,8 @@
         - 명령을 Model과 View 부분으로 라우팅
   - 파라미터 전달 방법
     - ?name=전달 → ?파라미터 이름=전달할 값 
+![](mvc-2.png)
+
   - 구동 방식
     - 브라우저 → 톰켓 서버 request with parameter
     - Controller 가 해당 request 처리 후 viewResolver에게 반환
