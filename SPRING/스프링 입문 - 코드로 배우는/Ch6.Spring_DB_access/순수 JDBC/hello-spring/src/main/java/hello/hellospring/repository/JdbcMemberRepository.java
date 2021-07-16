@@ -15,6 +15,11 @@ public class JdbcMemberRepository implements MemberRepository {
         this.dataSource = dataSource;
     }
 
+    // DB 커넥션 오픈 코드
+    private Connection getConnection() {
+        return DataSourceUtils.getConnection(dataSource);
+    }
+
     // 회원 가입
     @Override
     public Member save(Member member) {
@@ -22,7 +27,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
         Connection conn = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null; //결과를 받는 것것
+        ResultSet rs = null; //결과를 받는 것
 
        try {
             conn = getConnection(); //connection 가져옴
@@ -35,7 +40,7 @@ public class JdbcMemberRepository implements MemberRepository {
             rs = pstmt.getGeneratedKeys(); // RETURN_GENERATED_KEYS 와 매칭 되어 실행
 
             if (rs.next()) {
-                // 값이 있으시 꺼냄
+                // 값이 있을시 꺼냄
                 member.setId(rs.getLong(1));
             } else {
                 // 실패시
@@ -144,10 +149,7 @@ public class JdbcMemberRepository implements MemberRepository {
         }
     }
 
-    // DB 커넥션 오픈 코드
-    private Connection getConnection() {
-        return DataSourceUtils.getConnection(dataSource);
-    }
+
 
     //각 resource release
     private void close(Connection conn, PreparedStatement pstmt, ResultSet rs)
@@ -175,7 +177,7 @@ public class JdbcMemberRepository implements MemberRepository {
         }
     }
 
-    // DB 커넥션 닫기기 코드
+    // DB 커넥션 닫기 코드
    private void close(Connection conn) throws SQLException {
         DataSourceUtils.releaseConnection(conn, dataSource);
     }
