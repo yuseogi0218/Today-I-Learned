@@ -16,7 +16,7 @@ public class SpringConfig {
     //스프링이 자체적으로 DB와 연결할 수 있는 datasource 를 생성
     private DataSource dataSource;
 
-    // 생성된 datasource 주입
+    // 생성된 datasource 주입 - 빈에 등록?
     @Autowired
     public SpringConfig(DataSource dataSource) {
         this.dataSource = dataSource;

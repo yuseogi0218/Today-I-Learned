@@ -7,10 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+//MemberRepository를 상속받아서 구현
 public class JdbcMemberRepository implements MemberRepository {
 
     private final DataSource dataSource;
 
+    // Constructor
+    //db에 붙으려면 DataSource가 필요 나중에 spring에게 주입받아야 한다.
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
     }
@@ -31,8 +34,8 @@ public class JdbcMemberRepository implements MemberRepository {
 
        try {
             conn = getConnection(); //connection 가져옴
-            pstmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            // RETURN_GENERATED_KEYS - DB에 insert 할때 id 값 생성?
+            pstmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS); // ID- Key 값 얻는것
+            // RETURN_GENERATED_KEYS - DB에 insert 할때 id 값 생성
 
             pstmt.setString(1, member.getName()); // sql 의 첫번째 ? 랑 매칭
 
