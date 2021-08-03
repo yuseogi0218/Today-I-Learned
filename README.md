@@ -1,4 +1,4 @@
-# Today-I-Learned
+# TIL
 to organize study
 
 ---
