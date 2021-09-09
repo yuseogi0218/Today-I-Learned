@@ -15,21 +15,24 @@
 <body>
 <div class="container" id="app" v-cloak>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <h3>채팅방 리스트</h3>
+        </div>
+        <div class="col-md-6 text-right">
+            <a class="btn btn-primary btn-sm" href="/logout">로그아웃</a>
         </div>
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
             <label class="input-group-text">방제목</label>
         </div>
-        <input type="text" class="form-control" v-model="room_name" @keyup.enter="createRoom">
+        <input type="text" class="form-control" v-model="room_name" v-on:keyup.enter="createRoom">
         <div class="input-group-append">
             <button class="btn btn-primary" type="button" @click="createRoom">채팅방 개설</button>
         </div>
     </div>
     <ul class="list-group">
-        <li class="list-group-item list-group-item-action" v-for="item in chatrooms" v-bind:key="item.roomId" v-on:click="enterRoom(item.roomId)">
+        <li class="list-group-item list-group-item-action" v-for="item in chatrooms" v-bind:key="item.roomId" v-on:click="enterRoom(item.roomId, item.name)">
             {{item.name}}
         </li>
     </ul>
@@ -37,8 +40,6 @@
 <!-- JavaScript -->
 <script src="/webjars/vue/2.5.16/dist/vue.min.js"></script>
 <script src="/webjars/axios/0.17.1/dist/axios.min.js"></script>
-<script src="/webjars/bootstrap/4.3.1/dist/js/bootstrap.min.js"></script>
-<script src="/webjars/sockjs-client/1.1.2/sockjs.min.js"></script>
 <script>
     var vm = new Vue({
         el: '#app',
@@ -72,10 +73,9 @@
                         .catch( response => { alert("채팅방 개설에 실패하였습니다."); } );
                 }
             },
-            enterRoom: function(roomId) {
-                var sender = prompt('대화명을 입력해 주세요.');
-                localStorage.setItem('wschat.sender',sender);
+            enterRoom: function(roomId, roomName) {
                 localStorage.setItem('wschat.roomId',roomId);
+                localStorage.setItem('wschat.roomName',roomName);
                 location.href="/chat/room/enter/"+roomId;
             }
         }
