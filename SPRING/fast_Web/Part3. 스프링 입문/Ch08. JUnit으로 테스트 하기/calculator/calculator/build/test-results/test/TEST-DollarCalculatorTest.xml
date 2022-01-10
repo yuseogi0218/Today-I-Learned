@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DollarCalculatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-10T06:22:21" hostname="yuseogi.local" time="0.538">
+  <properties/>
+  <testcase name="dollarTest()" classname="DollarCalculatorTest" time="0.53"/>
+  <testcase name="testHello()" classname="DollarCalculatorTest" time="0.002"/>
+  <testcase name="mockTest()" classname="DollarCalculatorTest" time="0.005"/>
+  <system-out><![CDATA[22000
+hello
+60000
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
