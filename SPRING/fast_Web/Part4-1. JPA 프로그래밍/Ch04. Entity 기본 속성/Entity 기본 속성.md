@@ -7,6 +7,11 @@
             - SEQUENCE : Oracle, PostgreSql 에서 많이 사용하는 전략 - Sequence를 제공하는 sql - insert문이 실행될때 값 증가
             - TABLE : DB의 종류에 상관없이, ID 값을 관리하는 테이블을 만들어 가져다 쓰는 전략
             - AUTO : default 값, DB의 종류에 상관없이 사용 가능
+- 속성 타입 지정
+    - Primitive 타입
+        - Null 값 허용 안함
+    - Reference 타입
+        - Null 값 허용 함
             
 ### @Table
 - DB 테이블 구성 설정 가능 
