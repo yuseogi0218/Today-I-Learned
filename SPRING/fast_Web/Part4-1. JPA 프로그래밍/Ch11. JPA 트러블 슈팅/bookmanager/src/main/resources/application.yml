@@ -1,0 +1,23 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    generate-ddl: true # 자동으로 entity 로 사용되는 테이블들을 생성
+    hibernate:
+      ddl-auto: create-drop # 생성 후 persistence context 가 종료될 때, 제거한다.
+      # generate-ddl 보다 우선적으로 적용 됨
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/book_manager
+    username : root
+    password : 2db8ddasf
+    initialization-mode: always
+logging:
+  level:
+    root: trace
