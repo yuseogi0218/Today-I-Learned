@@ -1,0 +1,6 @@
+com/sp/fc/web/controller/HomeController.java
+ com.sp.fc.web.controller.HomeController
+com/sp/fc/web/LoginBasicApplication.java
+ com.sp.fc.web.LoginBasicApplication
+com/sp/fc/web/config/SecurityConfig.java
+ com.sp.fc.web.config.SecurityConfig
