@@ -1,7 +1,0 @@
-<beans>
-    <bean id="myConnectionMaker" class="springboook.use.dao.DConnectionMaker" />
-
-    <bean id="userDao" class="springbook.user.dao.UserDao">
-        <property name="connectionMaker" ref="myConnectionMaker"/>
-    </bean>
-</beans>
