@@ -1,9 +1,6 @@
 package com.example.jwt.controller;
 
-import com.example.jwt.dto.MemberLoginRequestDto;
-import com.example.jwt.dto.MemberLoginResponseDto;
-import com.example.jwt.dto.MemberRegisterRequestDto;
-import com.example.jwt.dto.MemberRegisterResponseDto;
+import com.example.jwt.dto.*;
 import com.example.jwt.result.SingleResult;
 import com.example.jwt.service.ResponseService;
 import com.example.jwt.service.SignService;
@@ -30,6 +27,12 @@ public class SignController {
     @PostMapping("login")
     public SingleResult<MemberLoginResponseDto> login(@RequestBody MemberLoginRequestDto request) {
         MemberLoginResponseDto response = signService.loginMember(request);
+        return responseService.getSingleResult(response);
+    }
+
+    @PostMapping("/reissue")
+    public SingleResult<TokenResponseDto> reIssue(@RequestBody TokenReIssueRequestDto tokenReIssueRequestDto) {
+        TokenResponseDto response = signService.reIssue(tokenReIssueRequestDto);
         return responseService.getSingleResult(response);
     }
 }

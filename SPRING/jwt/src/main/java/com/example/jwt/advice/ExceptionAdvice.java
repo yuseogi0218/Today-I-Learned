@@ -1,9 +1,6 @@
 package com.example.jwt.advice;
 
-import com.example.jwt.advice.exception.AccessDeniedException;
-import com.example.jwt.advice.exception.AuthenticationEntryPointException;
-import com.example.jwt.advice.exception.LoginFailureException;
-import com.example.jwt.advice.exception.MemberEmailAlreadyExistsException;
+import com.example.jwt.advice.exception.*;
 import com.example.jwt.result.Result;
 import com.example.jwt.service.ResponseService;
 import lombok.RequiredArgsConstructor;
@@ -41,4 +38,17 @@ public class ExceptionAdvice {
     public Result accessDeniedException() {
         return responseService.getFailureResult(-103, "권한이 필요합니다.");
     }
+
+    @ExceptionHandler(InvalidRefreshTokenException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public Result invalidRefreshTokenException() {
+        return responseService.getFailureResult(-104, "Refresh Token이 유효하지 않습니다.");
+    }
+
+    @ExceptionHandler(MemberNotFoundException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public Result memberNotFoundException() {
+        return responseService.getFailureResult(-107, "존재하지 않은 이메일입니다.");
+    }
+
 }

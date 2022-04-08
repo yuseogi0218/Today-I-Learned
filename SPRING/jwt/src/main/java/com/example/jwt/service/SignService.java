@@ -1,13 +1,12 @@
 package com.example.jwt.service;
 
+import com.example.jwt.advice.exception.InvalidRefreshTokenException;
 import com.example.jwt.advice.exception.LoginFailureException;
 import com.example.jwt.advice.exception.MemberEmailAlreadyExistsException;
+import com.example.jwt.advice.exception.MemberNotFoundException;
 import com.example.jwt.config.security.jwt.JwtTokenProvider;
 import com.example.jwt.dao.Member;
-import com.example.jwt.dto.MemberLoginRequestDto;
-import com.example.jwt.dto.MemberLoginResponseDto;
-import com.example.jwt.dto.MemberRegisterRequestDto;
-import com.example.jwt.dto.MemberRegisterResponseDto;
+import com.example.jwt.dto.*;
 import com.example.jwt.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -62,6 +61,28 @@ public class SignService {
         return MemberLoginResponseDto.builder()
                 .id(member.getId())
                 .token(jwtTokenProvider.createToken(request.getEmail()))
+                .build();
+    }
+
+    /**
+     * 토큰 재 발행
+     */
+    @Transactional
+    public TokenResponseDto reIssue(TokenReIssueRequestDto request) {
+
+        // 해당 토큰의 유효기간 확인 -> 아직 안지났으면 throw exception
+        if (!jwtTokenProvider.validateTokenExpiration(request.getRefreshToken())) {
+            throw new InvalidRefreshTokenException();
+        }
+
+        Member member = memberRepository.findByEmail(request.getEmail()).orElseThrow(MemberNotFoundException::new);
+
+        String accessToken = jwtTokenProvider.createToken(member.getEmail());
+        String refreshToken = jwtTokenProvider.createRefreshToken();
+
+        return TokenResponseDto.builder()
+                .accessToken(accessToken)
+                .refreshToken(refreshToken)
                 .build();
     }
 }
