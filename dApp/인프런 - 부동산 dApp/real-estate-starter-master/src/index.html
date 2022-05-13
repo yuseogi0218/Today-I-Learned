@@ -30,7 +30,57 @@
         <!-- 매물 리스트 -->
       </div>
     </div>   
+
+    <div id="template" style="display: none;">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel-heading">
+          <h3 class="panel-title">매물</h3>
+        </div>
+        <div class="panel-body">
+          <img style="width: 100%;" src="">
+          <br/> <br/>
+          <strong>아이디</strong> : <span class = "id"></span> <br />
+          <strong>종류</strong> : <span class="type"></span> <br />
+          <strong>면적(m^2)</strong> : <span class="area"></span> <br />
+          <strong>가격(ETH)</strong> : <span class="price"></span> <br/><br/>
+          <button class="btn btn-info btn-buy"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#buyModal">
+                  매입
+          </button>
+          <button class="btn btn-info btn-buyerInfo"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#buyerInfoModal"
+                  style="display: none;">
+                  매입자 정보
+          </button>
+        </div>
+      </div>
+    </div>
     
+    <div class="modal fade" tabindex="-1" role="dialog" id="buyModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">매입자 정보</h4>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="id" />
+            <input type="hidden" id="price" />
+            <input type="text" class="form-control" id="name" placeholder="이름" /><br />
+            <input type="number"  class="form-control" id="age" placeholder="나이" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-primary" onclick="App.buyRealEstate(); return false;">제출</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
