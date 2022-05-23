@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import BettingDapp from '@/components/BettingDapp'
+import BettingDapp from '@/components/betting-dapp'
 Vue.use(Router)
 
 export default new Router ({
