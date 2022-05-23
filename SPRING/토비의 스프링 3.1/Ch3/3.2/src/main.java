@@ -3,7 +3,6 @@ import org.junit.Test;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import springbook.user.dao.UserDao;
-import springbook.user.dao.UserDaoDeleteAll;
 import springbook.user.domain.User;
 
 import javax.sql.DataSource;
@@ -28,7 +27,7 @@ public class main {
     public void setUp() {
 
 
-        this.userDao = new UserDaoDeleteAll();
+        this.userDao = new UserDao();
         DataSource dataSource = new SingleConnectionDataSource(
                 "jdbc:mysql://localhost:3306/testdb?useSSL=false", "root", "2db8ddasf", true
         );

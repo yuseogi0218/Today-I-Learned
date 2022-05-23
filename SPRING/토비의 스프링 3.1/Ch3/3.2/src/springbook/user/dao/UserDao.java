@@ -9,15 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public abstract class UserDao {
+public class UserDao {
 
     private DataSource dataSource;
 
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-
-    abstract protected PreparedStatement makeStatement(Connection c) throws SQLException;
 
     public void add(User user) throws SQLException {
         Connection c = this.dataSource.getConnection();
@@ -64,34 +62,8 @@ public abstract class UserDao {
      * User 테이블의 모든 데이터 삭제
      */
     public void deleteAll() throws SQLException {
-        Connection c = null;
-        PreparedStatement ps = null;
-
-        try {
-            c = this.dataSource.getConnection();
-
-            ps = makeStatement(c);
-
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            throw e;
-        } finally {
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException e) {
-
-                }
-            }
-
-            if (c != null) {
-                try {
-                    c.close();
-                } catch (SQLException e) {
-
-                }
-            }
-        }
+        StatementStrategy st = new DeleteAllStatement();
+        jdbcContextWithStatementStrategy(st);
     }
 
     /**
@@ -139,6 +111,21 @@ public abstract class UserDao {
                 }
             }
 
+        }
+    }
+
+    public void jdbcContextWithStatementStrategy(StatementStrategy stmt) throws SQLException {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try {
+            c = dataSource.getConnection();
+
+            ps = stmt.makePreparedStatement(c);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            if (ps != null) {try {ps.close();} catch (SQLException e) {}}
+            if (c != null) {try {c.close();} catch (SQLException e) {}}
         }
     }
 }
