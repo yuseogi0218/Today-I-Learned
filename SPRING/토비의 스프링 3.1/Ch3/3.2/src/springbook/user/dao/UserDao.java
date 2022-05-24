@@ -121,6 +121,8 @@ public class UserDao {
             c = dataSource.getConnection();
 
             ps = stmt.makePreparedStatement(c);
+            
+            ps.executeUpdate();
         } catch (SQLException e) {
             throw e;
         } finally {
