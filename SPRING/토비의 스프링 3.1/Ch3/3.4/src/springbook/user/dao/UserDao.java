@@ -12,16 +12,17 @@ import java.sql.SQLException;
 public class UserDao {
 
     private DataSource dataSource;
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
-
-    // JdbcContext 를 DI 받도록 만든다.
     private JdbcContext jdbcContext;
 
-    public void setJdbcContext(JdbcContext jdbcContext) {
-        this.jdbcContext = jdbcContext;
+    public void setDataSource(DataSource dataSource) {
+        // JdbcContext 생성 (IoC)
+        this.jdbcContext = new JdbcContext();
+
+        // 의존 오브젝트 DI
+        this.jdbcContext.setDataSource(dataSource);
+
+        // 아직 JdbcContext를 적용하지 않은 메소드를 위해 남겨둔다.
+        this.dataSource = dataSource;
     }
 
     public void add(final User user) throws SQLException {
