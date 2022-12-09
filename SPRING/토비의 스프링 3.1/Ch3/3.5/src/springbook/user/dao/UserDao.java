@@ -1,35 +1,33 @@
 package springbook.user.dao;
 
+import org.springframework.dao.EmptyResultDataAccessException;
+import springbook.user.domain.User;
+
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.sql.DataSource;
-
-import org.springframework.dao.EmptyResultDataAccessException;
-import springbook.user.domain.User;
+import java.util.ArrayList;
 
 public class UserDao {
+
     private DataSource dataSource;
+    private JdbcContext jdbcContext;
 
     public void setDataSource(DataSource dataSource) {
+        // JdbcContext 생성 (IoC)
+        this.jdbcContext = new JdbcContext();
+
+        // 의존 오브젝트 DI
+        this.jdbcContext.setDataSource(dataSource);
+
+        // 아직 JdbcContext를 적용하지 않은 메소드를 위해 남겨둔다.
         this.dataSource = dataSource;
     }
 
-    public void add(User user) throws SQLException {
-        Connection c = this.dataSource.getConnection();
-
-        PreparedStatement ps = c.prepareStatement(
-                "insert into users(id, name, password) values(?,?,?)");
-        ps.setString(1, user.getId());
-        ps.setString(2, user.getName());
-        ps.setString(3, user.getPassword());
-
-        ps.executeUpdate();
-
-        ps.close();
-        c.close();
+    public void add(final User user) throws SQLException {
+        this.jdbcContext.executeSql("insert into users(id, name, password) values(?,?,?)", user.getId(), user.getName(), user.getPassword());
     }
 
     public User get(String id) throws SQLException {
@@ -62,37 +60,7 @@ public class UserDao {
      * User 테이블의 모든 데이터 삭제
      */
     public void deleteAll() throws SQLException {
-        Connection c = null;
-        PreparedStatement ps = null;
-
-        try {
-            c = this.dataSource.getConnection();
-
-            ps = c.prepareStatement("delete from users");
-
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            throw e;
-        } finally {
-            if (ps != null) {
-                try {
-                    ps.close();
-                    // ps.close 에서도 예외처리를 해주는 이유
-                    // SQLException이 발생할 수 있기 때문에 이를 잡아줘야 한다.
-                    // 그렇지 않으면 Connection 을 close()하지 못하고 메소드를 빠져나갈 수 있다.
-                } catch (SQLException e) {
-
-                }
-            }
-
-            if (c != null) {
-                try {
-                    c.close();
-                } catch (SQLException e) {
-
-                }
-            }
-        }
+        this.jdbcContext.executeSql("delete from users");
     }
 
     /**
@@ -142,4 +110,6 @@ public class UserDao {
 
         }
     }
+
+
 }
