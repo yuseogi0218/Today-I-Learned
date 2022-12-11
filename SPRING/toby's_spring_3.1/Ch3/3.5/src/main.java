@@ -11,6 +11,7 @@ import springbook.user.dao.UserDao;
 import springbook.user.domain.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -91,6 +92,41 @@ public class main {
 
         userDao.get("unknown_id");
 
+    }
+
+    @Test
+    public void getAll() throws SQLException {
+        userDao.deleteAll();
+
+        // negative test
+        List<User> users0 = userDao.getAll();
+        assertThat(users0.size(), is(0));
+
+        userDao.add(user1);
+        List<User> users1 = userDao.getAll();
+        assertThat(users1.size(), is(1));
+        checkSameUser(user1, users1.get(0));
+
+        userDao.add(user2);
+        List<User> users2 = userDao.getAll();
+        assertThat(users2.size(), is(2));
+        checkSameUser(user1, users2.get(0));
+        checkSameUser(user2, users2.get(1));
+
+        userDao.add(user3);
+        List<User> users3 = userDao.getAll();
+        assertThat(users3.size(), is(3));
+        checkSameUser(user3, users3.get(0)); // user3의 id 값이 알파벳 순으로 가장 빠르므로 getAll()의 첫번째 엘리먼트여야 한다.
+        checkSameUser(user1, users3.get(1));
+        checkSameUser(user2, users3.get(2));
+
+    }
+
+
+    private void checkSameUser(User expectedUser, User testUser) {
+        assertThat(expectedUser.getId(), is(testUser.getId()));
+        assertThat(expectedUser.getName(), is(testUser.getName()));
+        assertThat(expectedUser.getPassword(), is(testUser.getPassword()));
     }
 
 }
