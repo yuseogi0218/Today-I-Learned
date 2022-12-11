@@ -1,114 +1,77 @@
 package springbook.user.dao;
 
-import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import springbook.user.domain.User;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class UserDao {
 
-    private DataSource dataSource;
-    private JdbcContext jdbcContext;
+    private JdbcTemplate jdbcTemplate;
 
     public void setDataSource(DataSource dataSource) {
-        // JdbcContext 생성 (IoC)
-        this.jdbcContext = new JdbcContext();
+        // JdbcTemplate 의존성 주입
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
 
-        // 의존 오브젝트 DI
-        this.jdbcContext.setDataSource(dataSource);
-
-        // 아직 JdbcContext를 적용하지 않은 메소드를 위해 남겨둔다.
-        this.dataSource = dataSource;
     }
 
-    public void add(final User user) throws SQLException {
-        this.jdbcContext.executeSql("insert into users(id, name, password) values(?,?,?)", user.getId(), user.getName(), user.getPassword());
-    }
-
-    public User get(String id) throws SQLException {
-        Connection c = this.dataSource.getConnection();
-        PreparedStatement ps = c
-                .prepareStatement("select * from users where id = ?");
-        ps.setString(1, id);
-
-        ResultSet rs = ps.executeQuery();
-
-        User user = null;
-        if (rs.next()) {
-            user = new User();
+    private RowMapper<User> userRowMapper = new RowMapper<User>() {
+        @Override
+        public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+            User user = new User();
             user.setId(rs.getString("id"));
             user.setName(rs.getString("name"));
             user.setPassword(rs.getString("password"));
+            return user;
         }
+    };
 
-        rs.close();
-        ps.close();
-        c.close();
+    public void add(final User user) throws SQLException {
+        this.jdbcTemplate.update("insert into users(id, name, password) values(?,?,?)", user.getId(), user.getName(), user.getPassword());
+    }
 
-        if (user == null) {
-            throw new EmptyResultDataAccessException(1);
-        }
-        return user;
+    public User get(String id) throws SQLException {
+        return this.jdbcTemplate.queryForObject("select * from users where id = ?",
+                new Object[]{id}, // SQL 에 바인딩할 파라미터 값. 가변 인자 대신 배열을 사용한다.
+                this.userRowMapper
+        );
+    }
+
+    public List<User> getAll() {
+        return this.jdbcTemplate.query(
+                "select * from users",
+                this.userRowMapper
+        );
     }
 
     /**
      * User 테이블의 모든 데이터 삭제
      */
     public void deleteAll() throws SQLException {
-        this.jdbcContext.executeSql("delete from users");
+        this.jdbcTemplate.update("delete from users");
     }
 
     /**
      * User 테이블의 데이터 개수를 반환한다.
      */
     public int getCount() throws SQLException {
-        Connection c = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        try {
-            c = this.dataSource.getConnection();
-
-            ps = c.prepareStatement("select count(*) from users");
-
-            rs = ps.executeQuery();
-            rs.next();
-
-            int count = rs.getInt(1);
-
-            return count;
-        } catch (SQLException e) {
-            throw e;
-        } finally {
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                }
-            }
-
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException e) {
-
-                }
-            }
-
-            if (c != null) {
-                try {
-                    c.close();
-                } catch (SQLException e) {
-
-                }
-            }
-
-        }
+        return this.jdbcTemplate.queryForInt("select count(*) from users");
+//        return this.jdbcTemplate.query(new PreparedStatementCreator() {
+//            @Override
+//            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+//                return connection.prepareStatement("");
+//            }
+//        }, new ResultSetExtractor<Integer>() {
+//            @Override
+//            public Integer extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+//                resultSet.next();
+//                return resultSet.getInt(1);
+//            }
+//        });
     }
 
 
