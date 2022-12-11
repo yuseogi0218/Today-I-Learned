@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4a8de177-92b2-4b5d-a102-7a3191aa607e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.1/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/out/production/1.1/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/out/production/1.1/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/out/production/1.1/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/src/springbook/user/dao/DUserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/src/springbook/user/dao/NUserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.2/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/1.1/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/1.1/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/1.1/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/toby/springbook/user/dao/DUserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/toby/springbook/user/dao/NUserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/toby/springbook/user/dao/SimpleConnectionMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/src/springbook/user/dao/ConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/src/springbook/user/dao/DConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/src/springbook/user/dao/NConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.3/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/1.1/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/1.1/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/1.1/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/toby/springbook/user/dao/ConnectionMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/toby/springbook/user/dao/DConnectionMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/toby/springbook/user/dao/DaoFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/toby/springbook/user/dao/NConnectionMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/src/springbook/user/dao/ConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/src/springbook/user/dao/DConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/src/springbook/user/dao/DaoFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/src/springbook/user/dao/NConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.4/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/out/production/toby/springbook/user/dao/ConnectionMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/out/production/toby/springbook/user/dao/DConnectionMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/out/production/toby/springbook/user/dao/DaoFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/out/production/toby/springbook/user/dao/NConnectionMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/src/springbook/user/dao/ConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/src/springbook/user/dao/DConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/src/springbook/user/dao/DaoFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/src/springbook/user/dao/NConnectionMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.5/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch1/1.8/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.2/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.3/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/out/production/toby/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/src/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.4/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/out/production/toby/springbook/learningtest/junit/JUnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/out/production/toby/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/out/production/toby/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/src/springbook/learningtest/junit/JUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/src/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/src/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ch2/2.5/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/out/production/toby/springbook/learningtest/junit/JUnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/out/production/toby/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/out/production/toby/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/src/springbook/learningtest/junit/JUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/src/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/src/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.1/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/out/production/toby/springbook/learningtest/junit/JUnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/out/production/toby/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/out/production/toby/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/springbook/learningtest/junit/JUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/springbook/user/dao/DeleteAllStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/springbook/user/dao/StatementStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/src/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/learningtest/junit/JUnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/user/dao/DeleteAllStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/user/dao/StatementStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/user/dao/UserDao$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/user/dao/UserDao$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/out/production/toby/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/springbook/learningtest/junit/JUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/springbook/user/dao/StatementStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/src/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.3/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/learningtest/junit/JUnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/user/dao/JdbcContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/user/dao/StatementStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/user/dao/UserDao$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/user/dao/UserDao$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/out/production/toby/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/springbook/learningtest/junit/JUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/springbook/user/dao/JdbcContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/springbook/user/dao/StatementStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/src/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.4/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/springbook/learningtest/junit/JUnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/springbook/user/dao/JdbcContext$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/springbook/user/dao/JdbcContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/springbook/user/dao/StatementStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/springbook/user/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/springbook/user/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/toby/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/users_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/users_delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springbook/learningtest/junit/JUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springbook/learningtest/junit/junit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springbook/user/dao/JdbcContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springbook/user/dao/StatementStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springbook/user/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springbook/user/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test-applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.javax.activation-1.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.javax.mail-1.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.net.sf.cglib-2.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.org.aopalliance-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.org.aspectj.tools-1.6.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.org.castor-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.org.hsqldb-1.8.0.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/com.springsource.org.junit-4.7.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/mockito-all-1.8.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/mysql-connector-java-5.1.7-bin.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.aop-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.asm-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.aspects-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.beans-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.context-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.context.support-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.core-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.expression-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.jdbc-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.oxm-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.test-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/org.springframework.transaction-3.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lib/lib/spring-dao-2.0.8.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="270EPd9yzY1ENUKXyFEVXHmtoF9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="springbook.learningtest.template" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/springbook/learningtest/junit" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CalcSumTest.sumOfNumbers">
+    <configuration name="CalcSumTest.sumOfNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toby" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="springbook.learningtest.template.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="springbook.learningtest.template" />
+      <option name="MAIN_CLASS_NAME" value="springbook.learningtest.template.CalcSumTest" />
+      <option name="METHOD_NAME" value="sumOfNumbers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnitTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toby" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="springbook.learningtest.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="springbook.learningtest.junit" />
+      <option name="MAIN_CLASS_NAME" value="springbook.learningtest.junit.JUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toby" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.addAndGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toby" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <option name="METHOD_NAME" value="addAndGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.getUserFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toby" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <option name="METHOD_NAME" value="getUserFailure" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CalcSumTest.sumOfNumbers" />
+        <item itemvalue="JUnit.main.addAndGet" />
+        <item itemvalue="JUnit.main" />
+        <item itemvalue="JUnit.main.getUserFailure" />
+        <item itemvalue="JUnit.JUnitTest (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a8de177-92b2-4b5d-a102-7a3191aa607e" name="Changes" comment="" />
+      <created>1648448582333</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648448582333</updated>
+      <workItem from="1648448582857" duration="2467000" />
+      <workItem from="1648538345736" duration="1257000" />
+      <workItem from="1648542170142" duration="921000" />
+      <workItem from="1648543184068" duration="993000" />
+      <workItem from="1648606769760" duration="5000" />
+      <workItem from="1648606986720" duration="956000" />
+      <workItem from="1648611498147" duration="188000" />
+      <workItem from="1648611721677" duration="1379000" />
+      <workItem from="1651561597624" duration="785000" />
+      <workItem from="1651563020055" duration="6569000" />
+      <workItem from="1652173002340" duration="7226000" />
+      <workItem from="1652234782999" duration="110000" />
+      <workItem from="1652244416958" duration="3115000" />
+      <workItem from="1652946888028" duration="1636000" />
+      <workItem from="1653281434578" duration="5038000" />
+      <workItem from="1653353250032" duration="4564000" />
+      <workItem from="1655683205202" duration="5104000" />
+      <workItem from="1670570544027" duration="694000" />
+      <workItem from="1670576853022" duration="3243000" />
+      <workItem from="1670745781982" duration="93000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
