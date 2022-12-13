@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="org.springframework.transaction-3.0.7.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Lib/lib/org.springframework.transaction-3.0.7.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
