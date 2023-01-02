@@ -4,6 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -11,6 +15,7 @@ import springbook.user.dao.UserDao;
 import springbook.user.domain.Level;
 import springbook.user.domain.User;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,29 +34,35 @@ public class UserServiceTest {
 
     @Autowired UserDao userDao;
 
-    @Autowired
-    PlatformTransactionManager transactionManager;
+    @Autowired PlatformTransactionManager transactionManager;
+
+    @Autowired MailSender mailSender;
 
     List<User> users;	// test fixture
 
     @Before
     public void setUp() {
         users = Arrays.asList(
-                new User("bumjin", "박범진", "p1", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER - 1, 0),
-                new User("joytouch", "강명성", "p2", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER, 0),
-                new User("erwins", "신승한", "p3", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD - 1),
-                new User("madnite1", "이상호", "p4", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD),
-                new User("green", "오민규", "p5", Level.GOLD, 100, Integer.MAX_VALUE)
+                new User("bumjin", "박범진", "p1", "user1@ksug.org", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER - 1, 0),
+                new User("joytouch", "강명성", "p2", "user2@ksug.org", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER, 0),
+                new User("erwins", "신승한", "p3", "user3@ksug.org", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD - 1),
+                new User("madnite1", "이상호", "p4", "user4@ksug.org", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD),
+                new User("green", "오민규", "p5", "user5@ksug.org", Level.GOLD, 100, Integer.MAX_VALUE)
         );
     }
 
     @Test
+    @DirtiesContext // 컨텍스트의 DI 설정을 변경하는 테스트라는 것을 알려준다.
+    // 여기서는, UserService 의 MailSender DI 설정을 변경한다.
     public void upgradeLevels() throws Exception {
         userDao.deleteAll();
 
         for (User user : users) {
             userDao.add(user);
         }
+
+        MockMailSender mockMailSender = new MockMailSender();
+        userService.setMailSender(mockMailSender);
 
         // level upgrade 서비스 호출
         userService.upgradeLevels();
@@ -62,6 +73,29 @@ public class UserServiceTest {
         checkLevelUpgraded(users.get(3), true);
         checkLevelUpgraded(users.get(4), false);
 
+        List<String> requests = mockMailSender.getRequests();
+        assertThat(requests.size(), is(2));
+        assertThat(requests.get(0), is(users.get(1).getEmail()));
+        assertThat(requests.get(1), is(users.get(3).getEmail()));
+    }
+
+    static class MockMailSender implements MailSender {
+
+        private List<String> requests = new ArrayList<>();
+
+        public List<String> getRequests() {
+            return requests;
+        }
+
+        @Override
+        public void send(SimpleMailMessage simpleMailMessage) throws MailException {
+            requests.add(simpleMailMessage.getTo()[0]);
+        }
+
+        @Override
+        public void send(SimpleMailMessage[] simpleMailMessages) throws MailException {
+
+        }
     }
 
     @Test
@@ -102,6 +136,7 @@ public class UserServiceTest {
         UserService testUserService = new TestUserService(users.get(3).getId());
         testUserService.setUserDao(this.userDao); // userDao 를 수동 DI 해준다.
         testUserService.setTransactionManager(transactionManager);
+        testUserService.setMailSender(mailSender);
 
         userDao.deleteAll();
 

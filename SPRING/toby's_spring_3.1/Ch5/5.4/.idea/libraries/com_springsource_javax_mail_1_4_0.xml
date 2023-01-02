@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="com.springsource.javax.mail-1.4.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Lib/lib/com.springsource.javax.mail-1.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
