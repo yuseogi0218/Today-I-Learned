@@ -45,11 +45,4 @@ public class Member {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Member{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                '}';
-    }
 }
