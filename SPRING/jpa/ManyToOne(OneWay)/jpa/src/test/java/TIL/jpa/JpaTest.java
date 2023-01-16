@@ -57,12 +57,9 @@ public class JpaTest {
 
     @Test
     public void readJPQLTest() {
-        String jpql = "select t from Team t join Member m on t.id = m.team.id "
-                + "where m.id = :memberId";
+        String jpql = "select m.team from Member m where m.id = :memberId";
 
-        String jpql2 = "select m.team from Member m where m.id = :memberId";
-
-        Team team = em.createQuery(jpql2, Team.class)
+        Team team = em.createQuery(jpql, Team.class)
                 .setParameter("memberId", 0L)
                 .getSingleResult();
         System.out.println("팀 이름 = " + team.getName());
