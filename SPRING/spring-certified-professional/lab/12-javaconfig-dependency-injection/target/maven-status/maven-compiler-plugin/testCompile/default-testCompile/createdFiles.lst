@@ -1,0 +1,6 @@
+rewards/TestInfrastructureConfig.class
+rewards/internal/StubRewardRepository.class
+rewards/internal/StubAccountRepository.class
+config/RewardsConfigTests.class
+rewards/internal/RewardNetworkImplTests.class
+rewards/internal/StubRestaurantRepository.class

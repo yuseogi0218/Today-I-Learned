@@ -1,0 +1,3 @@
+accounts/web/AccountControllerTests.class
+accounts/client/AccountClientTests.class
+accounts/client/AccountWebClientTests.class

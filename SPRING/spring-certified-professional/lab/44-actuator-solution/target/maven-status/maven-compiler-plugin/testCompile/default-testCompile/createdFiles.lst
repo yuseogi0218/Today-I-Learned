@@ -1,0 +1,4 @@
+accounts/web/RestaurantHealthCheckTest.class
+accounts/web/AccountControllerTests.class
+accounts/client/AccountClientSecurityTests.class
+accounts/client/AccountClientCustomEndpointTests.class

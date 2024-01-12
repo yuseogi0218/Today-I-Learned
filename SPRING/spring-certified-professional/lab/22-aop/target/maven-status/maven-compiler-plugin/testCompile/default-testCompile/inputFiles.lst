@@ -1,0 +1,17 @@
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/TestConstants.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/CaptureSystemOutput.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/StubRewardRepository.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/restaurant/JdbcRestaurantRepositoryTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/DbExceptionTestConfig.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/reward/JdbcRewardRepositoryTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/SystemTestConfig.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/restaurant/RestaurantTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/StubAccountRepository.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/StubRestaurantRepository.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/DBExceptionHandlingAspectTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/LoggingAspectTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/aspects/RepositoryPerformanceLogTest.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/RewardNetworkTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/RewardNetworkImplTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/account/JdbcAccountRepositoryTests.java
+/Users/yuseogi/Desktop/work/github/Today-I-Learned/SPRING/spring-certified-professional/lab/22-aop/src/test/java/rewards/internal/account/AccountTests.java
