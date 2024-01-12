@@ -77,6 +77,19 @@ public class CashCardController {
         return ResponseEntity.notFound().build();
     }
 
+    // Hard Delete : delete the record from the database.
+    // Soft Delete : marking records as "deleted" in the database (so that they're retained, but marked as deleted).
+    // With a soft delete, we also need to change how Repositories interact with the database.
+    @DeleteMapping("/{id}")
+    private ResponseEntity<Void> deleteCashCard(@PathVariable Long id, Principal principal) {
+        // using the Principal in order to check whether the Cash Card exists, and enforce ownership
+        if (cashCardRepository.existsByIdAndOwner(id, principal.getName())) {
+            cashCardRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     private CashCard findCashCard(Long requestedId, Principal principal) {
         return cashCardRepository.findByIdAndOwner(requestedId, principal.getName());
     }
