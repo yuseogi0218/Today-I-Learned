@@ -21,6 +21,9 @@ dependencies {
 
 	implementation 'org.springframework.data:spring-data-jdbc'
 	testImplementation 'com.h2database:h2' //only when running tests.
+
+	// spring security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
 tasks.named('test') {

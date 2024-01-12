@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,9 +23,12 @@ public class CashCardController {
         this.cashCardRepository = cashCardRepository;
     }
 
+    // Principal is injected from Spring's IoC Container.
+    // Principal holds our user's authenticated, authorized information.
     @GetMapping("/{requestedId}")
-    private ResponseEntity<CashCard> findById(@PathVariable Long requestedId) {
-        Optional<CashCard> cashCardOptional = cashCardRepository.findById(requestedId);
+    private ResponseEntity<CashCard> findById(@PathVariable Long requestedId, Principal principal) {
+        // principal.getName() will return the username provided from Basic Auth.
+        Optional<CashCard> cashCardOptional = Optional.ofNullable(cashCardRepository.findByIdAndOwner(requestedId, principal.getName()));
         if (cashCardOptional.isPresent()) {
             return ResponseEntity.ok(cashCardOptional.get());
         } else {
@@ -31,19 +36,22 @@ public class CashCardController {
         }
     }
 
+    // use the provided Principal to ensure that the correct owner is saved with the new CashCard
     // UriComponentsBuilder is injected from Spring's IoC Container
     @PostMapping
-    private ResponseEntity<Void> createCashCard(@RequestBody CashCard newCashCardRequest, UriComponentsBuilder ucb) {
-        CashCard savedCashCard = cashCardRepository.save(newCashCardRequest);
+    private ResponseEntity<Void> createCashCard(@RequestBody CashCard newCashCardRequest, UriComponentsBuilder ucb, Principal principal) {
+        CashCard cashCardWithOwner = new CashCard(null, newCashCardRequest.amount(), principal.getName());
+        CashCard savedCashCard = cashCardRepository.save(cashCardWithOwner);
         URI locationOfNewCashCard = ucb.path("cashcards/{id}")
                 .buildAndExpand(savedCashCard.id())
                 .toUri();
         return ResponseEntity.created(locationOfNewCashCard).build();
     }
 
-    @GetMapping()
-    private ResponseEntity<Iterable<CashCard>> findAll(Pageable pageable) {
-        Page<CashCard> page = cashCardRepository.findAll(
+    @GetMapping
+    private ResponseEntity<List<CashCard>> findAll(Pageable pageable, Principal principal) {
+        Page<CashCard> page = cashCardRepository.findByOwner(
+                principal.getName(),
                 PageRequest.of(
                         pageable.getPageNumber(), // default 0
                         pageable.getPageSize(), // default 20
