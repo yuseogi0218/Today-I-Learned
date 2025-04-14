@@ -29,6 +29,9 @@ repositories {
 extra["snippetsDir"] = file("build/generated-snippets")
 
 dependencies {
+    implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
+    implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.11.0")
+    implementation("io.github.serpro69:kotlin-faker:1.15.0")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 //    implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")

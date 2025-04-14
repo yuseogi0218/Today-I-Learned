@@ -8,6 +8,7 @@ server:
 
 spring:
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/simple_blog?serverTimezone=Asia/Seoul&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8
     username: root
     password: 2DB8ddasf!
@@ -21,4 +22,8 @@ spring:
       hibernate:
         default_batch_fetch_size: 1000
         globally_quoted_identifiers: true
-    show-sql: true
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
