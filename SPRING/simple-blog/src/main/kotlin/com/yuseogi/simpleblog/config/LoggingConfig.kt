@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils.hasText
 import java.sql.SQLException
 
 @Configuration
-class P6SpyFormatter : JdbcEventListener(), MessageFormattingStrategy {
+class LoggingConfig : JdbcEventListener(), MessageFormattingStrategy {
 
     override fun onAfterGetConnection(connectionInformation: ConnectionInformation?, e: SQLException?) {
         P6SpyOptions.getActiveInstance().logMessageFormat = this::class.java.name
