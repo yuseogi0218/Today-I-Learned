@@ -1,4 +1,4 @@
-package com.yuseogi.simpleblog.config
+package com.yuseogi.simpleblog.config.aop
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.aspectj.lang.JoinPoint
