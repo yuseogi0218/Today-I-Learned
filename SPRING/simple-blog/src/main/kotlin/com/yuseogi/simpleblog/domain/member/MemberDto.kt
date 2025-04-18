@@ -2,7 +2,7 @@ package com.yuseogi.simpleblog.domain.member
 
 import jakarta.validation.constraints.NotNull
 
-data class MemberSaveReq(
+data class MemberDto(
 
     @field:NotNull(message = "require email")
     val email: String?,
@@ -12,7 +12,7 @@ data class MemberSaveReq(
     var role: Role?
 )
 
-fun MemberSaveReq.toEntity(): Member {
+fun MemberDto.toEntity(): Member {
     return Member(
         email = this.email ?: "",
         password = this.password ?: "",

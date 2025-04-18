@@ -23,11 +23,11 @@ class InitData(
     @EventListener(ApplicationReadyEvent::class)
     private fun init() {
 
-        val members = generateMembers(100)
-        memberRepository.saveAll(members)
-
-        val posts = generatePosts(100)
-        postRepository.saveAll(posts)
+//        val members = generateMembers(100)
+//        memberRepository.saveAll(members)
+//
+//        val posts = generatePosts(100)
+//        postRepository.saveAll(posts)
     }
 
     private fun generateMembers(cnt:Int): MutableList<Member> {
@@ -55,7 +55,7 @@ class InitData(
     }
 
     private fun generateMember(): Member =
-         MemberSaveReq(
+         MemberDto(
             email = faker.internet.safeEmail(),
             password = "1234",
             role = Role.USER

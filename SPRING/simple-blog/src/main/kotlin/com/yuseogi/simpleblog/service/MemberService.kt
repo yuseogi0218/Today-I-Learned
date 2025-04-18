@@ -13,7 +13,7 @@ class MemberService(
 ) {
 
     @Transactional
-    fun save(dto: MemberSaveReq): MemberRes {
+    fun save(dto: MemberDto): MemberRes {
         return memberRepository.save(dto.toEntity()).toDto()
     }
 
@@ -26,7 +26,7 @@ class MemberService(
     @Transactional(readOnly = true)
     fun findById(id: Long): MemberRes {
         return memberRepository.findById(id).orElseThrow {
-            throw MemberNotFoundException(id)
+            throw MemberNotFoundException(id.toString())
         }.toDto()
     }
 

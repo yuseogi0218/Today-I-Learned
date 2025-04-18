@@ -1,23 +1,22 @@
 package com.yuseogi.simpleblog.api
 
-import com.yuseogi.simpleblog.domain.member.MemberSaveReq
+import com.yuseogi.simpleblog.domain.member.MemberDto
 import com.yuseogi.simpleblog.service.MemberService
 import com.yuseogi.simpleblog.util.value.CmResDto
-import jakarta.servlet.http.HttpSession
 import jakarta.validation.Valid
 import org.springframework.data.domain.Pageable
 import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
-@RequestMapping("/api")
+@RequestMapping("/v1")
 @RestController
 class MemberController(
     private val memberService: MemberService
 ) {
 
     @PostMapping("/member")
-    fun save(@Valid @RequestBody dto: MemberSaveReq): CmResDto<*>{
+    fun save(@Valid @RequestBody dto: MemberDto): CmResDto<*>{
         return CmResDto(HttpStatus.OK, "save Member", memberService.save(dto))
     }
 

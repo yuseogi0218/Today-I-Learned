@@ -1,6 +1,7 @@
 package com.yuseogi.simpleblog.exception
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import jakarta.persistence.NoResultException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.MethodArgumentNotValidException
