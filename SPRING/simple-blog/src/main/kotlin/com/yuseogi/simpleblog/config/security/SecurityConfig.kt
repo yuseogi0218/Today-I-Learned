@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.security.access.AccessDeniedException
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.builders.WebSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
@@ -21,6 +22,7 @@ import org.springframework.security.config.annotation.web.invoke
 import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.AuthenticationException
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.AuthenticationEntryPoint
@@ -29,16 +31,17 @@ import org.springframework.security.web.access.AccessDeniedHandler
 import org.springframework.security.web.authentication.AuthenticationFailureHandler
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity(securedEnabled = true)
 class SecurityConfig(
     private val authenticationConfiguration: AuthenticationConfiguration,
-    private val objectMapper: ObjectMapper,
-    private val memberRepository: MemberRepository
+    private val objectMapper: ObjectMapper
 ) {
 
     private val log = KotlinLogging.logger {  }
@@ -72,11 +75,16 @@ class SecurityConfig(
                 configurationSource = corsConfig()
             }
             authorizeHttpRequests {
-                authorize("/**", authenticated)
+                authorize("/v1/posts", hasAnyRole("ADMIN", "USER"))
+                authorize(anyRequest, permitAll)
             }
             exceptionHandling {
                 authenticationEntryPoint = CustomAuthenticationEntryPoint(objectMapper)
                 accessDeniedHandler = CustomAccessDeniedHandler()
+            }
+            logout {
+                logoutUrl = "/logout"
+                logoutSuccessHandler = CustomLogoutSuccessHandler(objectMapper)
             }
         }
 
@@ -110,7 +118,7 @@ class SecurityConfig(
 
     @Bean
     fun authenticationFilter(): CustomBasicAuthenticationFilter {
-        return CustomBasicAuthenticationFilter(authenticationManager = authenticationManager(), memberRepository = memberRepository)
+        return CustomBasicAuthenticationFilter(authenticationManager = authenticationManager(), objectMapper = objectMapper)
     }
 
     fun corsConfig(): CorsConfigurationSource {
@@ -174,5 +182,25 @@ class SecurityConfig(
         }
 
     }
+
+    class CustomLogoutSuccessHandler(
+        private val objectMapper: ObjectMapper
+    ) : LogoutSuccessHandler {
+
+        private val log = KotlinLogging.logger {  }
+
+        override fun onLogoutSuccess(request: HttpServletRequest?, response: HttpServletResponse, authentication: Authentication?) {
+            log.info { "logout success" }
+
+            val context = SecurityContextHolder.getContext()
+            context.authentication = null
+            SecurityContextHolder.clearContext()
+
+            val cmResDto = CmResDto(HttpStatus.OK, "logout success", null)
+
+            responseData(response, objectMapper.writeValueAsString(cmResDto))
+        }
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.yuseogi.simpleblog.domain.member
 
 import jakarta.validation.constraints.NotNull
+import java.time.LocalDateTime
 
 data class MemberDto(
 
@@ -24,5 +25,7 @@ data class MemberRes(
     val id: Long,
     val email: String,
     val password: String,
-    var role: Role
+    var role: Role,
+    val createdAt: LocalDateTime,
+    val updatedAt: LocalDateTime,
 )

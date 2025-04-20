@@ -31,4 +31,11 @@ class GlobalExceptionHandler {
         return ResponseEntity(of, HttpStatus.INTERNAL_SERVER_ERROR)
     }
 
+    @ExceptionHandler(RuntimeException::class)
+    fun handleRuntimeException(e: RuntimeException): ResponseEntity<ErrorResponse> {
+        val of = ErrorResponse.of(ErrorCode.INTERNAL_SERVER_ERROR, e.message)
+
+        return ResponseEntity(of, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
+
 }

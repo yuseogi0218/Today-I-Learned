@@ -1,6 +1,9 @@
 package com.yuseogi.simpleblog.config.security
 
-import com.yuseogi.simpleblog.domain.member.MemberRepository
+import com.auth0.jwt.exceptions.JWTVerificationException
+import com.auth0.jwt.exceptions.TokenExpiredException
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
 import io.github.oshai.kotlinlogging.KotlinLogging
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
@@ -12,7 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter
 
 class CustomBasicAuthenticationFilter(
-    private val memberRepository: MemberRepository,
+    private val objectMapper: ObjectMapper,
     authenticationManager: AuthenticationManager
 ) : BasicAuthenticationFilter(authenticationManager) {
 
@@ -24,16 +27,40 @@ class CustomBasicAuthenticationFilter(
 
         log.info { "권한이나 인증이 필요한 요청이 들어옴" }
 
-        val token = request.getHeader(jwtManager.jwtHeader)?.replace("Bearer ", "")
+        val accessToken = request.getHeader(jwtManager.authorizationHeader)?.replace("Bearer ", "")
 
-        if (token == null) {
+        if (accessToken == null) {
             chain.doFilter(request, response)
             return
         }
 
-        val memberEmail = jwtManager.getMemberEmail(token) ?: throw RuntimeException("memberEmail을 찾을 수 없습니다.")
-        val member = memberRepository.findMemberByEmail(memberEmail)
-        val principalDetails = PrincipalDetails(member)
+        val accessTokenValidResult: TokenValidResult = jwtManager.validateAccessToken(accessToken)
+
+        if (accessTokenValidResult is TokenValidResult.Failure) {
+            if (accessTokenValidResult.exception is TokenExpiredException) {
+                val principalJsonData = jwtManager.reissueAccessToken(request)
+                val principalDetails = objectMapper.readValue(principalJsonData, PrincipalDetails::class.java)
+
+                val newAccessToken = jwtManager.generateAccessToken(principalJsonData)
+                response.addHeader(jwtManager.authorizationHeader, jwtManager.jwtHeader + newAccessToken)
+
+                val authentication: Authentication = UsernamePasswordAuthenticationToken(principalDetails, "", principalDetails.authorities)
+
+                SecurityContextHolder.getContext().authentication = authentication
+                chain.doFilter(request, response)
+
+                return
+            } else {
+                log.error { accessTokenValidResult.exception.stackTrace }
+            }
+        }
+
+        val principalJsonData = jwtManager.getPrincipalByAccessToken(accessToken)
+        val principalDetails = objectMapper.readValue(principalJsonData, PrincipalDetails::class.java)
+
+        // DB 호출 부
+//        val member = memberRepository.findMemberByEmail(principal.member.email)
+//        val principalDetails = PrincipalDetails(member)
 
         val authentication: Authentication = UsernamePasswordAuthenticationToken(principalDetails, "", principalDetails.authorities)
 

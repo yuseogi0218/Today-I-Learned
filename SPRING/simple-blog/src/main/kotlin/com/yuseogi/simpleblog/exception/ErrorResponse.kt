@@ -4,13 +4,14 @@ import org.springframework.validation.BindingResult
 
 class ErrorResponse(
     errorCode: ErrorCode,
+    errorMessage: String? = null,
     var errors: List<FieldError> = ArrayList()
 ) {
 
     var code: String = errorCode.code
         private set
 
-    var message: String = errorCode.message
+    var message: String = errorMessage ?: errorCode.message
         private set
 
     companion object {
@@ -25,6 +26,13 @@ class ErrorResponse(
         fun of(code: ErrorCode): ErrorResponse {
             return ErrorResponse(
                 errorCode = code
+            )
+        }
+
+        fun of(code: ErrorCode, message: String?): ErrorResponse {
+            return ErrorResponse(
+                errorCode = code,
+                errorMessage = message
             )
         }
 

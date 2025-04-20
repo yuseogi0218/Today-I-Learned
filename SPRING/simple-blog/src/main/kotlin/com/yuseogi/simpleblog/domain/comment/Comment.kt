@@ -7,9 +7,10 @@ import jakarta.persistence.*
 @Entity
 @Table(name = "Comment")
 class Comment(
+    id: Long = 0,
     content: String,
     post: Post
-) : AuditingEntity() {
+) : AuditingEntity(id) {
 
     @Column(name = "content", nullable = false)
     var content: String = content

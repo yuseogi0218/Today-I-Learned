@@ -29,4 +29,6 @@
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
     </root>
+
+    <logger name="com.yuseogi.simpleblog" level="DEBUG" />
 </configuration>

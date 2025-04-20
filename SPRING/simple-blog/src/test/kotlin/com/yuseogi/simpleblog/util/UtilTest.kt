@@ -1,5 +1,10 @@
 package com.yuseogi.simpleblog.util
 
+import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
+import com.fasterxml.jackson.module.kotlin.KotlinFeature
+import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.yuseogi.simpleblog.config.security.JwtManager
 import com.yuseogi.simpleblog.config.security.PrincipalDetails
 import com.yuseogi.simpleblog.domain.member.Member
@@ -11,6 +16,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 class UtilTest {
 
     private val log = KotlinLogging.logger {  }
+
+    val objectMapper = ObjectMapper()
 
     @Test
     fun errorLogTest() {
@@ -31,14 +38,31 @@ class UtilTest {
 
     @Test
     fun generateJwtTest() {
-        val jwtManager = JwtManager()
+        objectMapper.registerModules(JavaTimeModule())
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+        objectMapper.registerModules(
+            KotlinModule.Builder()
+                .configure(KotlinFeature.StrictNullChecks, false)
+                .configure(KotlinFeature.NullIsSameAsDefault, false)
+                .configure(KotlinFeature.NullToEmptyMap, false)
+                .configure(KotlinFeature.NullToEmptyCollection, false)
+                .configure(KotlinFeature.SingletonSupport, false)
+                .build()
+        )
+
+        val jwtManager = JwtManager(accessTokenExpireSecond = 1)
 
         val details = PrincipalDetails(Member.createFakeMember(1))
-        val accessToken = jwtManager.generateAccessToken(details)
+        val jsonPrincipal = objectMapper.writeValueAsString(details)
+        val accessToken = jwtManager.generateAccessToken(jsonPrincipal)
 
-        val email = jwtManager.getMemberEmail(accessToken)
+        Thread.sleep(2 * 1000)
 
-        log.info { "accessToken $accessToken" }
-        log.info { "email $email" }
+        val decodedJWT = jwtManager.validateAccessToken(accessToken)
+
+        val principalString = decodedJWT.getClaim(jwtManager.claimPrincipal).asString()
+        val principalDetails = objectMapper.readValue(principalString, PrincipalDetails::class.java)
+
+        log.info { "result => ${principalDetails.member}" }
     }
 }
