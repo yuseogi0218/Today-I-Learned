@@ -9,9 +9,7 @@ import java.time.LocalDateTime
 
 @EntityListeners(value = [AuditingEntityListener::class])
 @MappedSuperclass
-abstract class AuditingEntity(
-    id: Long
-) : AuditingEntityId(id) {
+abstract class AuditingEntity() : AuditingEntityId() {
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -26,13 +24,11 @@ abstract class AuditingEntity(
 
 @EntityListeners(value = [AuditingEntityListener::class])
 @MappedSuperclass
-abstract class AuditingEntityId(
-    id: Long
-) : Serializable {
+abstract class AuditingEntityId() : Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = id
+    var id: Long? = null
         protected set
 
 }

@@ -9,7 +9,7 @@ class TestController{
     @GetMapping("/health")
     fun healthTest() :String = "hello kotlin-simple-blog"
 
-    @GetMapping("/error")
-    fun errorTest() :String = "error"
+//    @GetMapping("/error")
+//    fun errorTest() :String = "error"
 
 }

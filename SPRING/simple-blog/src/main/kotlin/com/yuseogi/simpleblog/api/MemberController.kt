@@ -15,11 +15,6 @@ class MemberController(
     private val memberService: MemberService
 ) {
 
-    @PostMapping("/member")
-    fun save(@Valid @RequestBody dto: MemberDto): CmResDto<*>{
-        return CmResDto(HttpStatus.OK, "save Member", memberService.save(dto))
-    }
-
     @GetMapping("/members")
     fun findAll(@PageableDefault(size = 10) pageable: Pageable): CmResDto<*> {
         return CmResDto(HttpStatus.OK, "find All Members", memberService.findAll(pageable))

@@ -76,6 +76,7 @@ class SecurityConfig(
             }
             authorizeHttpRequests {
                 authorize("/v1/posts", hasAnyRole("ADMIN", "USER"))
+//                authorize("/v1/member/profile", hasAnyRole("ADMIN", "USER"))
                 authorize(anyRequest, permitAll)
             }
             exceptionHandling {
@@ -101,7 +102,7 @@ class SecurityConfig(
     }
 
     @Bean
-    fun passwordEncoder(): PasswordEncoder {
+    fun passwordEncoder(): BCryptPasswordEncoder {
         return BCryptPasswordEncoder()
     }
 

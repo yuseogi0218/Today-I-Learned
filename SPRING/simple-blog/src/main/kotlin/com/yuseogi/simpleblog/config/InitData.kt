@@ -1,6 +1,9 @@
 package com.yuseogi.simpleblog.config
 
-import com.yuseogi.simpleblog.domain.member.*
+import com.yuseogi.simpleblog.domain.member.Member
+import com.yuseogi.simpleblog.domain.member.MemberDto
+import com.yuseogi.simpleblog.domain.member.MemberRepository
+import com.yuseogi.simpleblog.domain.member.Role
 import com.yuseogi.simpleblog.domain.post.Post
 import com.yuseogi.simpleblog.domain.post.PostRepository
 import com.yuseogi.simpleblog.domain.post.PostSaveReq
@@ -10,6 +13,7 @@ import io.github.serpro69.kfaker.faker
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.event.EventListener
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 @Configuration
 class InitData(
@@ -21,8 +25,7 @@ class InitData(
     private val log = KotlinLogging.logger {  }
 
     @EventListener(ApplicationReadyEvent::class)
-    private fun init() {
-
+    fun init() {
 //        val members = generateMembers(100)
 //        memberRepository.saveAll(members)
 //
@@ -57,7 +60,7 @@ class InitData(
     private fun generateMember(): Member =
          MemberDto(
             email = faker.internet.safeEmail(),
-            password = "1234",
+            rawPassword = "1234",
             role = Role.USER
         ).toEntity()
 
