@@ -37,35 +37,39 @@ class CustomBasicAuthenticationFilter(
         val accessTokenValidResult: TokenValidResult = jwtManager.validateAccessToken(accessToken)
 
         if (accessTokenValidResult is TokenValidResult.Failure) {
-            if (accessTokenValidResult.exception is TokenExpiredException) {
-                val principalJsonData = jwtManager.reissueAccessToken(request)
+            handleTokenException(accessTokenValidResult) {
+                val principalJsonData = jwtManager.reissueAccessToken(request, response)
+
                 val principalDetails = objectMapper.readValue(principalJsonData, PrincipalDetails::class.java)
+                setAuthentication(principalDetails)
 
-                val newAccessToken = jwtManager.generateAccessToken(principalJsonData)
-                response.addHeader(jwtManager.authorizationHeader, jwtManager.jwtHeader + newAccessToken)
-
-                val authentication: Authentication = UsernamePasswordAuthenticationToken(principalDetails, "", principalDetails.authorities)
-
-                SecurityContextHolder.getContext().authentication = authentication
                 chain.doFilter(request, response)
-
-                return
-            } else {
-                log.error { accessTokenValidResult.exception.stackTrace }
             }
+
+            return
         }
 
         val principalJsonData = jwtManager.getPrincipalByAccessToken(accessToken)
         val principalDetails = objectMapper.readValue(principalJsonData, PrincipalDetails::class.java)
+        setAuthentication(principalDetails)
 
-        // DB 호출 부
-//        val member = memberRepository.findMemberByEmail(principal.member.email)
-//        val principalDetails = PrincipalDetails(member)
+        chain.doFilter(request, response)
+    }
 
+    private fun handleTokenException(tokenValidResult: TokenValidResult.Failure, func:() -> Unit) {
+        when (tokenValidResult.exception) {
+            is TokenExpiredException -> func()
+            else -> {
+                log.error { "token valid exception" }
+                log.error { tokenValidResult.exception.stackTrace }
+                throw tokenValidResult.exception
+            }
+        }
+    }
+
+    private fun setAuthentication(principalDetails: PrincipalDetails) {
         val authentication: Authentication = UsernamePasswordAuthenticationToken(principalDetails, "", principalDetails.authorities)
 
         SecurityContextHolder.getContext().authentication = authentication
-
-        chain.doFilter(request, response)
     }
 }

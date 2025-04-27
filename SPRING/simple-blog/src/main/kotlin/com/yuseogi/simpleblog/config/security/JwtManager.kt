@@ -8,6 +8,7 @@ import com.auth0.jwt.interfaces.DecodedJWT
 import com.yuseogi.simpleblog.util.CookieProvider
 import io.github.oshai.kotlinlogging.KotlinLogging
 import jakarta.servlet.http.HttpServletRequest
+import jakarta.servlet.http.HttpServletResponse
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -84,7 +85,7 @@ class JwtManager(
         }
     }
 
-    fun reissueAccessToken(request: HttpServletRequest): String {
+    fun reissueAccessToken(request: HttpServletRequest, response: HttpServletResponse): String {
         log.debug { "Access Token 재발급" }
         // Cookie 에 있는 refreshToken 을 꺼내어서, accessToken 을 재발급 함
         val refreshToken = CookieProvider.getCookie(request, CookieProvider.CookieName.REFRESH_TOKEN).orElseThrow()
@@ -95,7 +96,12 @@ class JwtManager(
             throw RuntimeException("invalid refreshToken")
         }
 
-        return getPrincipalByRefreshToken(refreshToken)
+        val principalJsonData = getPrincipalByRefreshToken(refreshToken)
+
+        val newAccessToken = generateAccessToken(principalJsonData)
+        response.addHeader(authorizationHeader, jwtHeader + newAccessToken)
+
+        return principalJsonData
     }
 
 }
