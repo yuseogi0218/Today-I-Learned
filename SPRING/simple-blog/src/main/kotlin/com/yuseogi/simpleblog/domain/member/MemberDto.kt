@@ -19,12 +19,14 @@ data class MemberDto(
     fun toEntity(): Member {
         return Member(
             email = this.email ?: "",
-            password = encodeRawPassword() ?: "",
+            password = encodeRawPassword(),
             role = this.role ?: Role.USER
         )
     }
 
-    private fun encodeRawPassword(): String? = BeanAccessor.getBean(PasswordEncoder::class).encode(this.rawPassword!!)
+    private fun encodeRawPassword(): String =
+        BeanAccessor.getBean(PasswordEncoder::class)
+            .encode(this.rawPassword!!)
 }
 
 data class MemberRes(
