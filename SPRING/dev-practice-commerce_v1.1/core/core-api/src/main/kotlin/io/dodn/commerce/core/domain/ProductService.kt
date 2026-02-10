@@ -9,7 +9,7 @@ class ProductService(
     private val productFinder: ProductFinder,
 ) {
     fun findProducts(categoryId: Long, offsetLimit: OffsetLimit): Page<Product> {
-        return productFinder.findByCategory(categoryId, offsetLimit)
+        return productFinder.findByCategory(categoryId, offsetLimit.toPageable())
     }
 
     fun findProduct(productId: Long): Product {
