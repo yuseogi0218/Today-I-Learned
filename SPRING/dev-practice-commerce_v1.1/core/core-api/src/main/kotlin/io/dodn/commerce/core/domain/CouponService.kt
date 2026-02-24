@@ -14,6 +14,7 @@ class CouponService(
     private val productCategoryRepository: ProductCategoryRepository,
 ) {
     fun getCouponsForProducts(productIds: Collection<Long>): List<Coupon> {
+        // 쿠폰 타겟 조회
         val productTargets = couponTargetRepository.findByTargetTypeAndTargetIdInAndStatus(
             CouponTargetType.PRODUCT,
             productIds,
@@ -24,6 +25,7 @@ class CouponService(
             productCategoryRepository.findByProductIdInAndStatus(productIds, EntityStatus.ACTIVE).map { it.categoryId },
             EntityStatus.ACTIVE,
         )
+        // 사용자가 특정 상품에 대해서 실제 사용할 수 있는 쿠폰 목록 조회
         return couponRepository.findByIdInAndStatus((productTargets + categoryTargets).map { it.couponId }.toSet(), EntityStatus.ACTIVE)
             .map {
                 Coupon(

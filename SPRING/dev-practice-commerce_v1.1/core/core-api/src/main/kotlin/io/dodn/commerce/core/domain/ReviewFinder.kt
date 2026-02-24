@@ -42,7 +42,7 @@ class ReviewFinder(
             RateSummary.EMPTY
         } else {
             RateSummary(
-                rate = founds.sumOf { it.rate }.divide(founds.size.toBigDecimal()),
+                rate = founds.sumOf { it.rate }.divide(founds.size.toBigDecimal()), // 리뷰 평균 계산
                 count = founds.size.toLong(),
             )
         }

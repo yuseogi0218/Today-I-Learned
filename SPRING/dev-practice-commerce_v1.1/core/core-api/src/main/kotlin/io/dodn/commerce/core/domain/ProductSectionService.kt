@@ -4,9 +4,9 @@ import org.springframework.stereotype.Service
 
 @Service
 class ProductSectionService(
-    private val productFinder: ProductFinder,
+    private val productSectionFinder: ProductSectionFinder,
 ) {
     fun findSections(productId: Long): List<ProductSection> {
-        return productFinder.findSections(productId)
+        return productSectionFinder.findSections(productId)
     }
 }

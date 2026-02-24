@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component
 class ProductFinder(
     private val productRepository: ProductRepository,
     private val productCategoryRepository: ProductCategoryRepository,
-    private val productSectionRepository: ProductSectionRepository,
 ) {
     fun findByCategory(categoryId: Long, pageable: Pageable): Page<Product> {
         // 활성화된 productCategory 목록 조회
@@ -62,9 +61,4 @@ class ProductFinder(
         )
     }
 
-    fun findSections(productId: Long): List<ProductSection> {
-        return productSectionRepository.findByProductId(productId)
-            .filter { it.isActive() }
-            .map { ProductSection(it.type, it.content) }
-    }
 }
