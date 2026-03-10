@@ -42,6 +42,8 @@ class ReviewFinder(
             RateSummary.EMPTY
         } else {
             RateSummary(
+                // 평균 계산 시, 계산 대상이 되는 리뷰의 기준은 ?
+                // Ex. 조회 날짜 기준 1년 이내에 작성된 리뷰
                 rate = founds.sumOf { it.rate }.divide(founds.size.toBigDecimal()), // 리뷰 평균 계산
                 count = founds.size.toLong(),
             )

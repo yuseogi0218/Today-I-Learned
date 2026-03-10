@@ -23,6 +23,7 @@ class ReviewService(
     fun addReview(user: User, target: ReviewTarget, content: ReviewContent): Long {
         val reviewKey = reviewPolicyValidator.validateNew(user, target)
         val reviewId = reviewManager.add(reviewKey, target, content)
+        // 포인트 정책 : Review 작성 시, 포인트 지급
         pointHandler.earn(user, PointType.REVIEW, reviewId, PointAmount.REVIEW)
         return reviewId
     }
@@ -34,6 +35,7 @@ class ReviewService(
 
     fun removeReview(user: User, reviewId: Long): Long {
         val deletedReviewId = reviewManager.delete(user, reviewId)
+        // 포인트 정책 : Review 삭제 시, 포인트 차감
         pointHandler.deduct(user, PointType.REVIEW, deletedReviewId, PointAmount.REVIEW)
         return deletedReviewId
     }

@@ -7,6 +7,9 @@ import io.dodn.commerce.storage.db.core.ReviewRepository
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Component
 
+/**
+ * Review 이력 관리가 필요할 수 있다. (History 또는 Snapshot)
+ */
 @Component
 class ReviewManager(
     private val reviewRepository: ReviewRepository,

@@ -19,13 +19,18 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
+/**
+ * Review 에 대한 개념은 장기적으로 확장 될 수 있다.
+ * - ReviewTargetType 을 통해서 확장성을 가져갈 수 있음.
+ * - Ex. 현재는 상품에 대한 Review 작성만 가능 -> But, 미래는 제품 유형, 사용자, ... 등 다양한 개념에 대한 Review 작성이 가능해질 수 있다.
+ */
 @RestController
 class ReviewController(
     private val reviewService: ReviewService,
 ) {
     @GetMapping("/v1/reviews")
     fun getReviews(
-        @RequestParam targetType: ReviewTargetType,
+        @RequestParam targetType: ReviewTargetType, // PRODUCT, PRODUCT_TYPE, USER, ...?
         @RequestParam targetId: Long,
         @RequestParam offset: Int,
         @RequestParam limit: Int,
