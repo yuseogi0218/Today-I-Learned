@@ -11,6 +11,10 @@ import io.dodn.commerce.storage.db.core.QuestionRepository
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 
+/**
+ * Component (Finder, Writer) 로 분리시키지 않은 이유 -> 현재 정책 및 Logic 이 간단하기 때문에.
+ * - But, 코드에 통일성이 없기 때문에, 유지보수에는 안좋을 수 있다.
+ */
 @Service
 class QnAService(
     private val questionRepository: QuestionRepository,
@@ -27,6 +31,7 @@ class QnAService(
             .filter { it.isActive() }
             .associateBy { it.questionId }
 
+        // Question 과 Answer 를 한 쌍으로, QnA 를 구성한다.
         return Page(
             questions.content.map {
                 QnA(
@@ -45,6 +50,7 @@ class QnAService(
         )
     }
 
+    @Transactional
     fun addQuestion(user: User, productId: Long, content: QuestionContent): Long {
         val saved = questionRepository.save(
             QuestionEntity(

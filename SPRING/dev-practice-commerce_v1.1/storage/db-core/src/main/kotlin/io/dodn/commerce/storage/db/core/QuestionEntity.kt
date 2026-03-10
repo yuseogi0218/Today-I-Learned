@@ -7,6 +7,7 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "question")
 class QuestionEntity(
+    // 사용자만 질문 작성이 가능하다.
     val userId: Long,
     // NOTE: QNA 는 아예 상품 전용으로 지정
     val productId: Long,

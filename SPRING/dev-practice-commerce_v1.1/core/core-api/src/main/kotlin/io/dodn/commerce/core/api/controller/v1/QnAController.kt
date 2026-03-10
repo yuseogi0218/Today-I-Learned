@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController
 class QnAController(
     private val qnaService: QnAService,
 ) {
+    // 질문과 답변 조회를 하나의 API 에 구성할지 또는 별도의 API(질문, 답변 따로)로 구성할지
     @GetMapping("/v1/qna")
     fun getQnA(
         @RequestParam productId: Long,
@@ -58,4 +59,8 @@ class QnAController(
         qnaService.removeQuestion(user, questionId)
         return ApiResponse.success()
     }
+
+    /**
+     * NOTE. 답변은어드민 쪽 기능이므로, 별도 API 서버로 구성 ?
+     */
 }
